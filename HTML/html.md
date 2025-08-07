@@ -71,14 +71,14 @@
 - 디폴트는 border는 표시되지 않는다.(border : 라인선)
    <\table>
         <\tr>
-            <\th> </th>
+            <\th> <\/th>
         <\/tr>
         <\tr>
             <\td> <\/td>
         <\/tr>
     <\/table>
 
-# 10. 링크 표현<Anchor> : <a>
+# 10. 링크 표현<Anchor> : <\a>
 - 형식 : <\a href="절대/상대 경로" target="">컨텐츠<\/a>
 - 다른 사이트나 페이지로 링크를 통해 이동하는 경우 사용
 - target 속성은 _self(기본), _blank(새창), _parent 등..
