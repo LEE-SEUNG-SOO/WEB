@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <h1>Table</h1>
+    <hr>
+    <table border="1">
+        <thead> <!-- 테이블의 제목을 구분하기 위한 설정-->
+            <tr>
+                <th>구분</th>
+                <th>제목1</th>
+                <th>제목2</th>
+                <th>제목3</th>
+            </tr>
+        </thead>
+        <tbody> <!-- 테이블의 값을 구분하기 위한 설정-->
+            <tr>
+                <th>1</th>
+                <td>데이터1</td>
+                <td colspan="2">데이터2</td>
+                <!-- <td>데이터3</td> -->
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>데이터4</td>
+                <td rowspan="2">데이터5</td>
+                <td>데이터6</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>데이터7</td>
+                <!-- <td>데이터8</td> -->
+                <td>데이터9</td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td colspan="3">데이터10</td>
+            </tr>
+        </tbody>
+        <tfoot> <!-- 테이블의 마지막행?을 구분하기 위한 설정-->
+            <tr>
+                <th>합계</th>
+                <td>합계1</td>
+                <td>합계2</td>
+                <td>합계3</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

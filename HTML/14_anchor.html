@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor</title>
+</head>
+<body>
+    <h1>앵커 태그</h1>
+    <hr>
+    <h3>절대 경로</h3>
+    <a href="#">#</a><br> <!-- # : 자기 자신을 호출-->
+    <a href="http://www.naver.com" target="_self">네이버_self</a><br> <!-- 네이버 호출--> <!--디폴트-->
+    <a href="http://www.naver.com" target="_parent">네이버_parent</a><br> <!-- 네이버 호출--> <!--사용빈도적음-->
+    <a href="http://www.naver.com" target="_top">네이버_top</a><br> <!-- 네이버 호출--> <!--사용빈도적음-->
+    <a href="http://www.naver.com" target="_blank">네이버_blank</a><br> <!-- 네이버 호출--> <!--새창에서 띄우기-->
+    <a href="http://www.google.com">구글</a><br> <!-- 구글 호출-->
+    <a href="http://127.0.0.1:5500/HTML/13_table.html">테이블 사용법</a><br> <!-- 테이블 호출-->
+    <hr>
+    <h3>상대 경로</h3>
+    <a href="13_table.html">테이블 사용법</a><br> <!-- 같은 폴더위치에 있기때문에 파일명만 입력-->
+    <!--http://127.0.0.1:5500/HTML/13_table.html-->
+    <a href="/13_table.html">테이블 사용법2</a><br> <!-- /는 html실행 파일의 위쪽으로 올라간후 파일검색-->
+     <!--http://127.0.0.1:5500/13_table.html-->
+    <a href="/README.md">README</a><br> <!-- 다른파일에 있으면 경로설정-->
+
+    <h3>파일 다운로드</h3>
+    <a href="/download/README.zip">파일 다운로드</a><br> <!-- 실행html파일 기준 경로 파일 다운로드-->
+    <a href="../README.zip">파일 다운로드</a> <!--파일 다운로드-->
+
+</body>
+</html>
