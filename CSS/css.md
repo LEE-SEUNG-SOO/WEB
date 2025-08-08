@@ -16,7 +16,7 @@
     *(body 안의 모든 태그들을 선택)
     전체 폰트 타입, 레이아웃 사이즈, 여백등을 설정할때 사용하기 좋음.
 - Tag selector : HTML의 태그를 선택하여 스타일 정의
-- Class selector : class명을 설정하여 스타일 정의 
+- Class selector : class명을 설정하여 스타일 정의
     .class명  <다중사용 가능>
 - Id selector : id명을 설정하여 스타일 정의(이벤트, 자바스크립트에서 사용)
     #id명  <다중사용 불가>

@@ -28,10 +28,10 @@
         } */
 
         /* 테이블의 짝수 행에만 배경색 정의 */
-        tr:nth-child(even){
+        tr > td:nth-child(even){
             background-color: aquamarine;
         }
-        tr:nth-child(odd){
+        tr > td:nth-child(odd){
             background-color: crimson;
         }
     </style>
@@ -50,7 +50,12 @@
         <li>React</li>
     </ul>
 
-    <table border="1">
+    <table border="1">   
+        <tr>
+            <th>제목</th>
+            <th>제목</th>
+            <th>제목</th>
+        </tr>
         <tr>
             <td>1</td>
             <td>2</td>
@@ -82,6 +87,5 @@
             <td>9</td>
         </tr>
     </table>
-
 </body>
 </html>
