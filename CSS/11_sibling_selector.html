@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibling Selector</title>
+    <style>
+        h1 + ul{ background-color: aqua; }
+        ul + ul{ background-color: blue; }
+        h1 ~ ol{ background-color: rgb(226, 61, 61); } /* h1을 기점으로 인접한 태그 제외 찾기*/
+
+    </style>
+</head>
+<body>
+    <h1>Sibling Selector</h1>
+    <ul>
+        <li>menu 1</li>
+        <li>menu 2</li>
+        <li>menu 3</li>
+    </ul>
+    <ul>
+        <li>menu 1</li>
+        <li>menu 2</li>
+        <li>menu 3</li>
+    </ul>
+    <h2>Sibling Selector</h2>
+    <ol>
+        <li>menu 1</li>
+        <li>menu 2</li>
+        <li>menu 3</li>
+    </ol>
+</body>
+</html>

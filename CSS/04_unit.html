@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit</title>
+    <style>
+        .pixel{
+            /* pt(기본 1.2px?), px, em(기본 폰트 크기 x 배수) */
+            /* font-size: 20pt;  */
+            font-size: 20px; 
+            /* font-size: 1.2em; */
+            background-color: aqua;
+            width: 1000px; /* 절대 사이즈 */
+        }
+        .percent{
+            background-color: rgb(133, 145, 255);
+            width: 40%; /* 상대 사이즈 */
+        }
+        .h5-a{ background-color: coral; width: 1200px;} /* 부모 div의 pixel보다 큼 */
+        .h5-b{ background-color: chartreuse; width: 50%;}
+    </style>
+</head>
+<body>
+    <h1>CSS 단위 설정</h1>
+    <hr>
+
+    <h2>Pixel(픽셀)</h2> <!-- 브라우저 크기 상관없이 고정-->
+    <div class="pixel">
+        <h5 class="h5-a">CSS - Pixel</h5>
+        Lorem ipsum dolor, <br> 
+        sit amet consectetur adipisicing elit. <br>
+        Impedit vitae a illo odio? Quo provident praesentium culpa ex fugiat? <br>
+        Numquam hic reiciendis officiis quae sunt minus rerum quisquam corrupti illo. <br>
+    </div>
+    <hr>
+    <h2>Percent(%)</h2> <!--브라우저 크기의 퍼센트를 따라감-->
+    <div class="percent"> 
+        <h5 class="h5-b">CSS - Percent</h5>
+        Lorem ipsum dolor, <br> 
+        sit amet consectetur adipisicing elit. <br>
+        Impedit vitae a illo odio? Quo provident praesentium culpa ex fugiat? <br>
+        Numquam hic reiciendis officiis quae sunt minus rerum quisquam corrupti illo. <br>
+    </div>
+</body>
+</html>

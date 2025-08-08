@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descendant Selector</Select></title>
+
+    <style>
+        #p h1{ color: rgb(10, 253, 253); }
+        #p div { width: 300px; background-color: yellow;} /* div 크기 300px 배경 yellow*/
+        #li1 a { width: 80px; background-color: rgb(255, 9, 124);}
+        #p a { font-size: 40px;} /* body #p 태그에 포함된 모든 자손 태그 */
+    </style>
+</head>
+<body class="p" id ="p">
+    <h1>Descendant Selector</h1>
+    <div>
+        <h3>sub title</h3>
+        <ul>
+            <li id = "li1">
+                <a href="#">naver</a>
+            </li>
+        </ul>
+        <ol>
+            <li>
+                <a href="#">google</a>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

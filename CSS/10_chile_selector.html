@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Selector</Select></title>
+
+    <style>
+        #p > h1{ color: aquamarine; }
+        /* #p > h3{ color: brown;} h3 은 body의 직계자식이 아니기때문에 불가 */
+        #p > div > h3{ color: brown;}
+    </style>
+</head>
+<body class="p" id ="p">
+    <h1>Child Selector</h1>
+    <div>
+        <h3>sub title</h3>
+        <ul>
+            <li id = "li1">
+                <a href="#">naver</a>
+            </li>
+        </ul>
+        <ol>
+            <li>
+                <a href="#">google</a>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
