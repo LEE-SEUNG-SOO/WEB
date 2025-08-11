@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box model</title>
+    <style>
+        h3 { 
+            border: 1px solid gray;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            /* background-color: aquamarine; */
+        }
+
+        .padding, .margin { 
+            width: 30%;     
+        }
+
+        .padding {
+            border: 1px solid blue;
+            /* margin t:30px r:100px b:50px l:100px */
+            margin-top: 30px;
+            margin-right: 100px;
+            margin-bottom: 50px;
+            margin-left: 100px;
+            /* margin: 30px 100px 50px 100px; */
+            /* maring: 10px 5px; top,bottom 10px, right,left 5px */
+        }
+        .margin {
+            border: 1px solid rgb(0, 255, 0);
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        .padding h3{
+            margin: 20px 10px;
+        }
+
+        .inline {
+            border: 5px solid red;
+            width: 50%;
+            /* padding: 20px 10px; */
+        }
+        .inline span {
+            border: 2px solid greenyellow;
+            padding: 20px;
+            margin: 20px;
+            /* display  : inline-block; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Box model</h1>
+    <h2>content, border, padding, margin</h2>
+    <hr>
+    <div class="inline">
+        <span>Span Test</span>        
+        <span>Span Test</span>
+    </div>
+    <div class="padding">
+        <h3>Padding</h3>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Officia, quam commodi totam, error doloribus cum placeat distinctio inventore, 
+        soluta adipisci nemo molestias aliquam ex tempora quos! Consequatur harum fugiat sequi?
+    </div>
+    <div class="margin">
+        <h3>Margin</h3>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Officia, quam commodi totam, error doloribus cum placeat distinctio inventore, 
+        soluta adipisci nemo molestias aliquam ex tempora quos! Consequatur harum fugiat sequi?
+    </div>
+</body>
+</html>

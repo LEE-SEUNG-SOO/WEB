@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .d1, .p1 {
+            border: 1px solid blue;
+        }
+        .d1 {
+            width: 50%;
+            height: 100px;
+            background-color: aqua;
+            overflow-x: auto; /* 자식이 부모의 범위 초과시 스크롤 생성 */
+            /* overflow-x: hidden;  */
+        }
+        .p1 {
+            width: 120%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Overflow</h1>
+    <hr>
+    <div class="d1">
+        <p class="p1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, neque quaerat laborum fugiat debitis pariatur voluptatem velit veritatis temporibus. Consequatur excepturi possimus itaque! Cupiditate esse aliquam, debitis labore incidunt mollitia.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, neque quaerat laborum fugiat debitis pariatur voluptatem velit veritatis temporibus. Consequatur excepturi possimus itaque! Cupiditate esse aliquam, debitis labore incidunt mollitia.
+        </p>
+    </div>
+</body>
+</html>

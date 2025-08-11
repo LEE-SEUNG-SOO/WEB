@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Auto</title>
+    <style>
+        header{
+            border: 1px solid red;
+            width: 100%;
+            background-color: aquamarine;
+        }
+        .header-top {
+            width: 1000px;
+            height: 200px;
+            text-align: center;
+            background-color: aquamarine;
+            padding: 10px 0px;
+            margin: auto;
+            border: 1px solid black;
+        }
+        main {
+            width: 1000px;
+            height: 200px;
+            background-color: yellowgreen;
+            margin: auto;
+        }
+        h1 {
+            background-color: violet;
+            width: 400px;
+            padding: 20px;
+            margin: auto;
+        }
+        span {            
+            background-color: violet;
+            width: 200px;
+            margin: auto; /* span은 정해진 width가 없으므로 불가*/
+            display: block; /* block으로 설정하면 가능 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <h1>Margin Auto - Layout</h1>
+        </div>
+        <hr>
+    </header>
+    <main>
+        <span>main content!!</span>
+    </main>
+</body>
+</html>

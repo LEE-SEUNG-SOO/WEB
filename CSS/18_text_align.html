@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Align</title>
+    <style>
+        span{
+            background-color: deeppink;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        p{
+            background-color: aquamarine;
+        }
+        .left{
+            text-align: left;
+        }
+        .center{
+            width: 200px;
+            text-align: center;
+        }
+        .right{
+            text-align: right;
+        }
+        .justify{
+            text-align:justify;
+            width: 50%;
+            background-color: chocolate;
+            line-height: 50px;
+            text-transform: lowercase;
+        }
+        .letter{
+            width: 700px;
+            border: 1px solid blue;
+            letter-spacing: 15px; /* 한글자 단위 */
+            text-indent: 20px;
+            text-transform: capitalize; /* 단어의 첫글자 대문자 */
+        }
+        .word{
+            width: 700px;
+            border: 1px solid green;
+            word-spacing: 15px; /* 한단어 단위 */
+            text-indent: -20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Align</h1>
+    <hr>
+    <span>inline level - span</span>
+    <br>
+    <p class="left">Text Align - left</p>
+    <p class="center">Text Align - center<br><span>Add Span</span></p>
+    <p class="right">Text Align - right</p>
+    <p class="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Ad a, magnam adipisci, facilis exercitationem sit corporis quia eius odio 
+        voluptatum dolor iure deserunt ducimus.
+        Vero voluptatem repellat perspiciatis amet rem!</p>
+    <p class="letter">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Ad a, magnam adipisci, facilis exercitationem sit corporis quia eius odio 
+        voluptatum dolor iure deserunt ducimus.
+        Vero voluptatem repellat perspiciatis amet rem!</p>
+    <p class="word">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Ad a, magnam adipisci, facilis exercitationem sit corporis quia eius odio 
+        voluptatum dolor iure deserunt ducimus.
+        Vero voluptatem repellat perspiciatis amet rem!</p>
+</body>
+</html>
