@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+        .box-group {
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        .box-group div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            background-color: aquamarine;
+            text-align: center;
+            /* display: inline-block; */
+            float: left;
+            margin: 0px 10px 0px 0px;
+        }
+
+        .box-group p{
+            clear: both;
+        }
+
+        .left-box, .right-box{
+            border: 1px solid blue;
+        }
+        
+        .menu-group {
+            border: 1px solid blue;
+            background-color:rgba(0, 0, 0, 0.281);
+            overflow: hidden;
+            padding: 10px 10px;
+        }
+
+        .left-menu, .right-menu {
+            margin: 0;
+            padding: 0;    
+        }
+
+        .left-menu li {
+            float: left;
+            margin-right: 10px;
+            list-style: none;
+        }
+
+        .right-menu li {
+            float: right;
+            margin-left: 10px;
+            list-style: none;
+        }
+
+        .left-menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .right-menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .img-group img {
+            width: 100px;
+            float: left;
+            margin-right: 20px;
+        }
+        
+        .img-group2 {
+            clear: both;
+        }
+
+        .img-group2 img {
+            width: 100px;
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        .img-group2 p {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>float style - 블록 레벨의 태그를 한줄로 정렬</h1>
+    <hr>
+    <div class="box-group">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Minus eveniet ipsam nisi officiis iusto quis dolorem culpa perspiciatis
+            rem optio ad voluptates atque praesentium, aliquid est mollitia, aliquam deserunt saepe?
+        </p>
+    </div>
+
+    <br><br>
+    <nav class="menu-group">
+        <ul class="left-menu">
+            <li><a href="#"><i class="fa-brands fa-instagram"></i>인스타그램</a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i>유튜브</a></li>
+            <li><a href="#"><i class="fa-brands fa-square-facebook"></i>페이스북</a></li>
+        </ul>
+        <ul class="right-menu">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">단체관람</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">멤버십</a></li>
+        </ul>
+    </nav>
+    <div>컨텐츠 추가!!</div>
+    <br>
+    
+    <div class="img-group">
+        <img src="/HTML/images/img1.jpg" alt="해바라기">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+            Non consequuntur dolorem necessitatibus exercitationem fugit nesciunt ipsa mollitia consectetur eaque.<br>
+            Consequatur ad incidunt velit veniam perspiciatis earum aspernatur aliquam veritatis laboriosam?
+        </p>
+    </div>
+    <br>
+
+    <div class="img-group2">
+        <img src="/HTML/images/img2.jpg" alt="주황원">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+            Non consequuntur dolorem necessitatibus exercitationem fugit nesciunt ipsa mollitia consectetur eaque.<br>
+            Consequatur ad incidunt velit veniam perspiciatis earum aspernatur aliquam veritatis laboriosam?
+        </p>
+    </div>
+</body>
+</html>

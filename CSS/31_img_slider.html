@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img_Slider</title>
+     <style>
+        .header-left {
+            position: relative;
+            width: 50%;
+            height: 100px;
+            background-color: aquamarine;    
+        }
+
+        .header-left ul{
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            left: 200px;
+            top: 30px;
+        }
+
+        .header-left img {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        .header-left li{
+            list-style: none;
+            float: left;
+            padding: 5px 10px;
+            background-color: rgb(199, 199, 199);
+            border: 1px solid blue;
+        }
+
+        .header-left li a {
+            text-decoration: none;
+        }
+
+        .header-left li a:hover {
+            text-decoration: underline;
+            color: red;
+            font-size: 20px;
+        }
+
+        /* 이미지 슬라이더 스타일 */
+        .img-wrapper {
+            position: relative;
+            width: 1000px;
+            height: 400px;
+            margin: auto;
+            border: 5px solid blue;
+            text-align: center;
+        }
+
+        .img-wrapper img {
+            width: 800px;
+            height: 400px;
+        }
+
+        .img-wrapper button {
+            position: absolute;
+            top:50%;
+            background-color: cornflowerblue;
+            height: 30px;
+            width: 80px;
+            color: white;
+        }
+
+        .btn-prev {
+            left: 10px;
+        }
+
+        .btn-next {
+            right: 10px;
+        }
+     </style>
+</head>
+<body>
+    <h1>Image Slider</h1>
+    <hr>
+    <div class="header-left"> 
+        <img src="https://cgv.co.kr/_next/image?url=https%3A%2F%2Fcdn.cgv.co.kr%2Fcgvpomscontent%2Fips%2FunitCnts%2F2025%2F0610%2F900051d366c14ce4b4b91811794665b2.png&w=256&q=75" alt="CGV">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </div>
+    <hr>
+    <h2>Image Slider</h2>
+    <div class="img-wrapper">
+        <img src="https://cf2.lottecinema.co.kr/lotte_image/2025/Slayer/Slayer_1920774.jpg" alt="이미지">
+        <button class="btn-prev">prev</button>
+        <button class="btn-next">next</button>
+    </div>
+</body>
+</html>

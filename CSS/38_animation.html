@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            animation: changeColor 3s 0s 3; /* name duration timing-function delay iteration-count direction fill-mode */
+        }
+        @keyframes changeColor {
+            from { background-color: aquamarine;}
+            50% { background-color: tomato;}
+            to {background-color: violet; }
+        }
+
+        .box-img {
+            width: 600px;
+            height: 400px;
+            background-size:contain;
+            animation: boxImages 10s 0s 10; /* name duration timing-function delay iteration-count direction fill-mode */
+            /* name duration delay iteration-count */
+        }
+        @keyframes boxImages {
+            from {background-image: url("/HTML/images/img1.jpg");}
+            50% {background-image: url("/HTML/images/img2.jpg");}
+            to {background-image: url("/HTML/images/img3.jpg");}
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation</h1>
+    <hr>
+    <div class="box">box</div>
+    <div class="box-img">box</div>
+</body>
+</html>

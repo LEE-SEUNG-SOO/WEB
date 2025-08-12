@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position_Absolute</title>
+    <style>
+        img {
+            width: 100px;
+        }
+        
+        h1{
+            background-color: aquamarine;
+        }
+        
+        .absolute, .fixed {
+            width: 300px;
+            height: 300px;
+            border: 1px solid blue;
+        }
+
+        .absolute {
+            position: relative; /* 영역 설정*/
+        }
+
+        .absolute img {
+            position: absolute; /* 영역 기준 절대 위치 설정(겹치기 가능)*/
+            right: 0;
+            bottom: 0;
+        }
+
+        .fixed {
+            position: relative;
+        }
+
+        .fixed img {
+            position: fixed; /* 부모의 position의 영향을 받지 않는다.*/
+            left:100px;
+            top:20px;
+        }
+
+        .img1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Position_Absolute</h1>
+    <hr>
+    <img src="/HTML/images/img4.jpg" alt="" class="img1">
+    <div class="absolute">
+        <img src="/HTML/images/img1.jpg" alt="해바라기">
+    </div>
+    <div class="fixed">
+        <img src="/HTML/images/img2.jpg" alt="주황원">
+    </div>
+</body>
+</html>
