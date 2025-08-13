@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive 2</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .wrapper {
+            width: 920px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .wrapper aside {
+            /* border: 1px solid blue; */
+            width: 200px;
+            padding-left: 20px;
+            background-color: rgb(243, 213, 179);
+            float: left;
+        }
+        .wrapper aside img {
+            width: 100px;
+        }
+        .wrapper aside ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+        .wrapper aside ul li {
+            /* border: 1px solid pink; */
+            padding: 10px 0;
+        }
+        .wrapper aside ul li a {
+            text-decoration: none;
+            color: rgb(66, 57, 57);
+        }
+        main {
+            width: 700px;
+            height: 357px;
+            background-color: mediumspringgreen;
+            float: left;
+        }
+        @media screen and (max-width: 1000px){
+            .wrapper aside {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <aside>
+            <img src="https://cgv.co.kr/_next/image?url=https%3A%2F%2Fcdn.cgv.co.kr%2Fcgvpomscontent%2Fips%2FunitCnts%2F2025%2F0610%2F900051d366c14ce4b4b91811794665b2.png&w=256&q=75" alt="CGV">
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">씨네톡</a></li>
+                <li><a href="#">예매,예약</a></li>
+                <li><a href="#">매점</a></li>
+                <li><a href="#">더보기</a></li>
+                <li><a href="#">상영관 찾기</a></li>
+                <li><a href="#">특별관</a></li>
+            </ul>
+        </aside>
+        <main>
+            <h1>Main Content</h1>    
+        </main>
+    </div>
+</body>
+</html>
