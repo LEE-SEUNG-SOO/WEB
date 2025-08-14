@@ -1,0 +1,47 @@
+:root {
+    /* color list */
+    --color-white: white;
+    --color-black: black;
+    --color-violet: violet;
+    --color-orange: orange;
+    --color-gray: gray;
+    --color-aqua: aqua;
+
+    /* container size(width) */
+    --max-size-width: 1200px;
+}
+
+* {
+    font-family: 'Open Sans', 'sans-serif';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    ul {
+        list-style-type: none;
+    }  
+    li {
+        padding-right: 10px;
+    }
+    /* 버튼의 선 제거*/
+    button {
+        outline: 0;
+        border: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    section, footer {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    section.container {
+        width: var(--max-size-width);
+        max-width: 100%;
+        margin: auto;
+        border: 1px solid blue;
+    }
+}

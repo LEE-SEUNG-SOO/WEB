@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="shortcut icon" href="/PORTFOLIO/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>PORTFOLIO</title>
 </head>
 <body>
     <header class="header">
@@ -25,51 +27,163 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
-    <main class="main">
+    <main>
         <section id="home">
-            <div class="home-main">
-                <img src="/PORTFOLIO/img/avata.png" alt="pro" class="home-img">
-                <p>
-                    <h3>Hello</h3>
-                        I'm <strong class="home-strong">Coder</strong>, SS<br>
-                        a software engineer.
-                </p>
-                <button class="home-btn"><a href="#contact">contact</a></button>
-            </div>
+            <img class="home-img" src="/PORTFOLIO/img/avata.png" alt="pro">
+            <p class="home-text">
+                Hello<br>
+                I'm <span class="accent">Junior Developer</span>, Judy
+            </p>
+            <p class="home-text-sub">
+                A software engineer currently residing in Seoul, South Korea
+            </p>
+            <button class="home-btn"><a href="#contact">Contact Me</a></button>
         </section>
-        <section id="about">
-            <div class="about-main">
-                <h2>About Me</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Porro reprehenderit quos nihil quas id iusto atque qui tenetur repellendus fuga omnis,
-                    necessitatibus nam deleniti ex asperiores, fugit perspiciatis, nisi cupiditate.
-                </p>
-            </div>
+        <section id="about" class="section container">
+            <h2 class="title">About me</h2>
+            <p class="sub-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas modi quod cum ad saepe pariatur quia eum accusamus quibusdam placeat exercitationem laudantium unde consequuntur molestias, repellendus et at velit natus.</p>
             <ul class="majors">
                 <li class="major">
                     <i class="fa-brands fa-html5 major-icon"></i>
-                    <p>Front-end</p>
-                    <p>CSS, HTML</p>
+                    <p class="majors-title">Front-end</p>
+                    <p class="majors-description">HTML, CSS, JavaScript, TypeScript, React, WebAPIs</p>
                 </li>
                 <li class="major">
                     <i class="fa-solid fa-mobile major-icon"></i>
-                    <p>Front-end</p>
-                    <p>CSS, HTML</p>
+                    <p class="majors-title">Mobile</p>
+                    <p class="majors-description">Android Studio, React Native, iOS, Swift, Java, Kotlin</p>
                 </li>
                 <li class="major">
                     <i class="fa-solid fa-server major-icon"></i>
-                    <p>Front-end</p>
-                    <p>CSS, HTML</p>
+                    <p class="majors-title">Back-end</p>
+                    <p class="majors-description">Java, JavaScript, Go, Kotlin, Spring, Spring Boot</p>
                 </li>
             </ul>
+            <ul class="jobs">
+                <li class="job">
+                    <img src="/PORTFOLIO/img/jobs/google.png" alt="google">
+                    <p class="job-text">Google as Junior Software Engineer<br>
+                        2019 Oct - Until now</p>
+                </li>
+                <li class="job">
+                    <img src="/PORTFOLIO/img/jobs/samsung.png" alt="samsung">
+                    <p class="job-text">Samsung as Junior Software Engineer<br>
+                        2010 Oct - 2019 Oct</p>
+                </li>
+            </ul>
+        </section>
+        <section id="skill" class="section container">
+            <h2 class="title">My Skills</h2>
+            <p class="sub-title">Skills & Attribues</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam repudiandae odio iure sapiente tenetur corrupti cum quod, quo maxime deleniti cupiditate reprehenderit, temporibus enim quisquam illo ducimus, voluptates veritatis architecto?</p>
+        
+        <div class="skills">
+            <article class="coding">
+                <h3>Coding Skills</h3>
+                <ul class="coding-skill">
+                    <li class="bar">
+                        <div class="bar-title">
+                            <span>HTML</span>
+                            <span>98%</span>
+                        </div>
+                        <div class="bar-bg"><div class= "bar-value" style="width: 98%;"></div></div>
+                    </li>
+                    <li class="bar">
+                        <div class="bar-title">
+                            <span>Java</span>
+                            <span>98%</span>
+                        </div>
+                        <div class="bar-bg"><div class= "bar-value" style="width: 98%;"></div></div>
+                    </li>
+                    <li class="bar">
+                        <div class="bar-title">
+                            <span>Mysql</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="bar-bg"><div class= "bar-value" style="width: 90%;"></div></div>
+                    </li>
+                </ul>
+            </article>
+            <article class="tools">
+                <h3>Tools</h3>
+                <ul class="tools-skill">
+                    <li>Visual Studio Code</li>
+                    <li>Intellij</li>
+                    <li>Android Studio</li>
+                    <li>Eclipse</li>
+                    <li>MySql</li>
+                </ul>
+            </article>
+            <article class="etc">
+                <h3>etc</h3>
+                <ul class="etc-skill">
+                    <li>Visual Studio Code</li>
+                    <li>Intellij</li>
+                    <li>Android Studio</li>
+                    <li>Eclipse</li>
+                    <li>MySql</li>
+                </ul>
+            </article>
+        </div>
+        </section>
+        <section id="work" class="section container">
+            <h2 class="title">My Work</h2>
+            <p class="sub-title">project</p>
+            <ul class="work-categorys">
+                <li class="category">All<span class="category-count">8</span></li>
+                <li class="category">Front-end<span class="category-count">4</span></li>
+                <li class="category">Back-end<span class="category-count">2</span></li>
+                <li class="category">Mobile<span class="category-count">2</span></li>
+            </ul>
+
+            <ul class="projects">
+                <li class="project">
+                    <img class="meta-img" src="/PORTFOLIO/img/projects/project1.webp" alt="project#1">
+                    <div class="meta-data">
+                        <p>Project #1</p>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                </li>
+                <li class="project"> 
+                    <img class="meta-img" src="/PORTFOLIO/img/projects/project2.webp" alt="project#2">
+                    <div class="meta-data">
+                        <p>Project #2</p>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                </li>
+                <li class="project"> 
+                    <img class="meta-img" src="/PORTFOLIO/img/projects/project3.webp" alt="project#3">
+                    <div class="meta-data">
+                        <p>Project #3</p>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                </li>
+                <li class="project">
+                    <img class="meta-img" src="/PORTFOLIO/img/projects/project4.webp" alt="project#4">
+                    <div class="meta-data">
+                        <p>Project #4</p>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                </li>
+                <li class="project">
+                    <img class="meta-img" src="/PORTFOLIO/img/projects/project5.webp" alt="project#5">
+                    <div class="meta-data">
+                        <p>Project #5</p>
+                        <p>Clone Coding with HTML, CSS</p>
+                    </div>
+                </li>
+            </ul>
+
         </section>
 
 
 
-        <section id="skill"></section>
-        <section id="work"></section>
-        <section id="testimonial"></section>
-        <section id="contact"></section>
+
+
+
+
+        <section id="testimonial" class="section container"></section>
+        <section id="contact" class="section container"></section>
     </main>
     <footer class="footer">
 

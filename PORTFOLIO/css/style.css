@@ -35,6 +35,10 @@
     ul {
        list-style-type: none; 
     }
+    
+    li {
+        padding-right: 10px;
+    }
 
     /* 버튼의 선 제거*/
     button {
@@ -44,13 +48,14 @@
     a {
         text-decoration: none;
     }
-    section {
+    section, footer {
         padding: 4rem;
         text-align: center;
     }
 
     section.container {
         width: var(--max-size-width);
+        max-width: 100%;
         margin: auto;
     }
 }
@@ -93,6 +98,17 @@
 .header-menu-item.active {
     border: 2px solid var(--color-aqua);
     border-radius: 4px;    
+}
+
+/* media query - header toggle */
+.header-toggle {
+    display: none;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    font-size: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1.3rem;
 }
 
 /* home */
@@ -173,7 +189,7 @@
 }
 
 .majors-title {
-    font:bold;
+    font-weight:bold;
     margin-bottom: 1rem;
 }
 
@@ -242,4 +258,223 @@
 .bar-value {
     height: 3px;
     background-color: var(--color-aqua);
+}
+#work{
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.work-catecorys{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2.5rem 0;
+}
+.category {
+    position: relative;
+    color: var(--color-white);
+    border: 1px solid var(--color-aqua);
+    border-radius: 1.1rem;
+    padding: 0.5rem 3rem;
+    background-color: var(--color-black);
+}
+
+.category.selected {
+    background-color: var(--color-aqua);
+    color: var(--color-black);
+}
+.category-count {
+    position: absolute;
+    top: -20px;
+    right: 10%;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: 1px solid var(--color-orange);
+    border-radius: 100%;
+    opacity: 0%;
+    transition: all 1000ms ease;
+}
+
+.category:hover .category-count{
+    opacity: 1;
+    top: 0;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 동일한 크기의 grid설정 */
+    gap: 1rem;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;    /* grid로 자른 width의 크기 */
+    border-radius: 8px;
+}
+
+.project-metadata {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-black);
+    opacity: 0;
+}
+
+.project-metadata:hover{
+    opacity: 0.8;
+}
+
+/* Testimonial */
+.testimonials {
+    margin: 3rem;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem;
+}
+/* li의 짝수번째만 설정 */
+.testimonial:nth-child(even) .testimonial-img{
+    order: 1; /* 0 : 정순  1 : 역순 */
+}
+.testimonial-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
+}
+
+.testimonial-text {
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
+}
+
+.testimonial-text-name {
+    color: var(--color-aqua);
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.arrow-up {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    text-align: center;
+    font-size: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100px;
+    color: var(--color-white);
+    background-color:var(--color-black);
+    box-shadow: 5px 5px 0px 0px var(--color-aqua);
+}
+
+#contact {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.contact-link {
+    font-size: 3rem;
+    color: var(--color-white);
+}
+
+.contact-link:hover{
+    color: var(--color-aqua);
+}
+
+/********************************
+    media screen - 601px * 1000px
+********************************/
+@media screen and (max-width: 1000px) {
+    .header {
+        flex-direction: column;
+        align-items: start;
+    }
+    .header-menu {
+        display: none;
+    }
+    .header-toggle {
+        display: block;
+    }
+    .section {
+        padding: 3rem 2rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
+    #home {
+        padding: 5rem 3rem;
+    }
+    .home-intro-maintext {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .majors {
+        flex-direction: column;
+    }
+    .job {
+        justify-content: center;
+    }
+    .skills {
+        grid-template-columns: 1fr;
+    }
+    .work-catecorys{
+        flex-direction: column;
+    }
+    .category{
+        width: 50%;
+    }
+    .projects{
+        grid-template-columns: repeat(2, 1fr); /* 동일한 크기의 grid설정 */
+    }
+    .testimonial {
+        flex-direction: column;
+    }
+    /* li의 짝수번째만 설정 */
+    .testimonial:nth-child(even) .testimonial-img{
+        order: 0; /* 0 : 정순  1 : 역순 */
+    }
+    .arrow-up {
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+/********************************
+    media screen - 1px * 412px
+
+********************************/
+@media screen and (max-width: 600px) {
+    .projects{
+        grid-template-columns: repeat(1, 1fr); /* 동일한 크기의 grid설정 */
+    }
 }
