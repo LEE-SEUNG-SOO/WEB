@@ -414,6 +414,8 @@
     }
     
     .footer-contents{
+        margin-top: 0;
+        margin-bottom: 3rem;
         flex-direction: column;
         text-align: left;
         gap: 16%;
