@@ -239,6 +239,10 @@
     gap: 1rem;
 }
 
+.main-contents li {
+    padding-right: 0;
+}
+
 /* 짝수번째 게스트 선호 제거 */
 .main-contents li:nth-child(even) .main-content-guest {
     display: none;
