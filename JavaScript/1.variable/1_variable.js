@@ -1,0 +1,33 @@
+/**
+ * ECMAScript 2015 이후 버전을 기본으로 정리
+ * 변수 선언 키워드 : var(과거사용), let, const
+ * 형식 : 키워드 변수명 = 데이터값;
+ */
+
+
+// name이라는 변수에 홍길동을 저장
+let name1 = "홍길동";
+let name2 = '홍길동';
+
+console.log(name1);
+console.log(name2);
+
+// number 변수에 100을 저장
+let number = 100;
+let dnumber = 100.123;
+
+console.log(number);
+console.log(dnumber);
+
+// flag 변수에 true 저장
+let flag = true;
+console.log(flag);
+
+// name1에 다른값 저장
+name1 = 200;
+console.log("name1 : ", name1);
+
+// 상수값으로 정의 후 사용
+const cname = "홍길동";
+// cname = "이순신"; // const는 상수로써 한번 설정하면 변경 불가
+console.log("cname : ", cname);
