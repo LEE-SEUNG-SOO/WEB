@@ -45,8 +45,6 @@ console.log(address2);
 console.log(typeof address2);
 console.log('----------------');
 
-
-
 console.clear();
 
 let list = [1,2,3,4];
