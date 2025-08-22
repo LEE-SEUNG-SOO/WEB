@@ -13,7 +13,8 @@ class Info {
     setPwd = (pwd) => this.#pwd = pwd;
 
     alret = () =>{
-        window.alert(`id : ${this.getId()}, pwd : ${this.getPwd()}`);
+        window.alert(`        id : ${this.getId()}
+        pwd : ${this.getPwd()}`);
     }
 }
 
@@ -24,14 +25,21 @@ function login(){
     let id = document.querySelector('#id');
     let pwd = document.querySelector('#pwd');
 
-    const info = new Info(id.value, pwd.value);
-    info.alret();
+    if(id.value == ''){
+        window.alert('아이디를 입력해주세요.');
+        id.focus();
+    } else if(pwd.value == ''){
+        window.alert('비밀번호를 입력해주세요.');
+        pwd.focus();
+    } else {
+        const info = new Info(id.value, pwd.value);
+        info.alret();
+    }
 }
 
-class JoinInfo{
+class JoinInfo extends Info {
     constructor(id, pwd, cpwd, name, phone, emailname, emaildomain){
-        this.id = id;
-        this.pwd = pwd;
+        super(id, pwd);
         this.cpwd = cpwd;
         this.name = name;
         this.phone = phone;
@@ -39,16 +47,12 @@ class JoinInfo{
         this.emaildomain = emaildomain;
     }
     
-    getId = () => this.id;
-    getPwd = () => this.pwd;
     getCpwd = () => this.cpwd;
     getName = () => this.name;
     getPhone = () => this.phone;
     getEmailname = () => this.emailname;
     getEmaildomain = () => this.emaildomain;
 
-    setId = (id) => this.id = id;
-    setPwd = (pwd) => this.pwd = pwd;
     setCpwd = (cpwd) => this.cpwd = cpwd;
     setName = (name) => this.name = name;
     setPhone = (phone) => this.phone = phone;
@@ -67,14 +71,6 @@ class JoinInfo{
 }
 
 function btn_join(){
-    let id = document.querySelector('#id');
-    let pwd = document.querySelector('#pwd');
-    let cpwd = document.querySelector('#cpwd');
-    let name = document.querySelector('#name');
-    let phone = document.querySelector('#phone');
-    let emailname = document.querySelector('#emailname');
-    let emaildomain = document.querySelector('#emaildomain');
-
     let info = {
         'id': document.querySelector('#id').value,
         'pwd': document.querySelector('#pwd').value,
@@ -112,6 +108,8 @@ function checkValidate(info){
         window.alert('메일도메인을 선택해주세요.');
     } else if(info.pwd != info.cpwd){
         window.alert('비밀번호와 비밀번호 확인의 입력이 다릅니다.')
+    } else {
+        flag = true;
     }
 
     return flag;
@@ -128,6 +126,31 @@ function checkValue(info){
     } else {
         flag = true;
     }
-    
+
     return flag;
+}
+
+// 중복체크
+function checkId(){
+    // 기존에 존재하는 아이디
+    const setId = ['aaaaaa','host1234','bbbbbb','123456'];
+    let flag = true;
+    let id = document.querySelector('#id');
+    
+    if(id.value == ''){
+        window.alert('아이디를 입력해주세요.');
+    } else {
+        // 중복 체크
+        for(let i = 0; i < setId.length; i++){
+            if(id.value === setId[i]){
+                flag = false;     
+            }
+        }
+
+        if(flag){
+            window.alert('사용 가능한 아이디입니다.');  
+        } else {
+            window.alert('중복된 아이디가 존재합니다.');  
+        }
+    }
 }
