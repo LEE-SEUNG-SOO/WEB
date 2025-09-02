@@ -23,9 +23,6 @@ console.log('names[2] : ', names[2]);
 names[2] = '김유신';
 console.log('names[2] : ', names[2]);
 
-
-
-
 console.clear();
 let test = new Array("5");
 console.log(test.length);
