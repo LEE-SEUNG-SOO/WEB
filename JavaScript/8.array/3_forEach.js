@@ -19,6 +19,6 @@ fruits.forEach(
             array.splice(index, 1, '🍋');
         }
     }
-)
+);
 
 console.log('변경후 : ',fruits);
