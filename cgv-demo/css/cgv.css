@@ -205,7 +205,8 @@ footer {
 }
 .content-top iframe,
 .content-moviechart > div,
-.content-event-special {
+.content-event-special,
+.contetn-swiper{
     display: block;
     width: 1000px;
     margin: 0 auto;
@@ -747,4 +748,22 @@ footer {
     font-size: 1.2em;
     font-weight: 700;
     letter-spacing: 5px;
+}
+
+/** swiper*/
+.swiper {
+    border: 1px solid white;
+    width: 50%;
+    height: 600px; 
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-img {
+    width: 50%;
+    height: 600px;
 }
