@@ -1,0 +1,36 @@
+/**
+* value값에 따옴표 삭제
+*/
+
+.title {
+  color:blue;
+}
+
+.title3 {
+  background-color: aqua;
+}
+
+.mybutton {
+  background-color: yellow;
+}
+.button{
+  background-color: green;
+}
+
+.submit {
+  background-color: coral;
+}
+.reset{
+  background-color: deeppink;
+}
+
+.menu {
+  text-decoration: none;
+  padding: 5px 20px;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 10px
+}
