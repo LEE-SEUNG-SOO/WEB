@@ -3,6 +3,7 @@ import './App.css';
 import { MyTitle, MyTitle3 } from './component/MyTitle.jsx';
 import { MyButton } from './component/MyButton.jsx';
 import { Menu, Menu2, MenuList } from './component/Menu.jsx';
+import { AvatarImage } from './component/AvatarImage.jsx';
 
 // return은 한그룹만 설정해서 보내기. (여러개를 보낼경우 하나의 그룹(div)으로 묶을것.)
 export function App() {
@@ -46,6 +47,9 @@ export function App() {
       <Menu2 data={menu}/>
       <hr/>
       <MenuList menus={menus}/>
+      <AvatarImage imgurl="/images/people1.webp"/>
+      <AvatarImage imgurl="/images/people2.webp"/>
+      <AvatarImage imgurl="/images/people3.webp"/>
     </>
   );
 }

@@ -14,7 +14,9 @@
   background-color: yellow;
 }
 .button{
-  background-color: green;
+  background-color: aqua;
+  width: 150px;
+  height: 80px;
 }
 
 .submit {
@@ -33,4 +35,25 @@
   list-style: none;
   display: flex;
   gap: 10px
+}
+
+.number {
+  font-size: 50px;
+  padding: 10px;  
+}
+
+.total-number {
+  font-size: 50px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.counter-container {
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
