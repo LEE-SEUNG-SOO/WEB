@@ -1,4 +1,4 @@
-import { BestProduct } from "./component/Product.jsx";
+import { BestProduct } from "./component/BestProduct.jsx";
 import './css/Product.css';
 
 export default function App(){
