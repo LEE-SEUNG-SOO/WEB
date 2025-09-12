@@ -6,7 +6,8 @@ export function Menu({href, menuName, style, isIcon, icon}){
                 width:style.w,
                 height:style.h,
                 backgroundColor:style.bg,
-                color:style.color
+                color:style.color,
+                fontSize:style.fs
             }}>{isIcon === "true" ? icon : ""}{menuName}</a>
     )
 }

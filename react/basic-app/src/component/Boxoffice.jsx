@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react"
 import { fetchKobisAPI, searchMoviePoster } from '../util/commonData.js';
 import { BestProductImage } from './shared/BestProductImage.jsx';
 import { BestProductItem } from './BestProduct.jsx';
-
+import '/'
 export function Boxoffice(){
     const [posterList, setPosterList] = useState([]);
     const hasRun = useRef(false); // 현재 레퍼런스하는 부분에 대해 체크
@@ -41,8 +41,6 @@ export function Boxoffice(){
 
             fetchKobis();
             hasRun.current = true;
-        } else {
-            hasRun.current = false;
         }
     },[]);
 
