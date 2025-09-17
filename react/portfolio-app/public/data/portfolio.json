@@ -1,0 +1,99 @@
+{
+    "header":{
+      "menus":[
+            { "href":"#home", "text":"Home" },
+            { "href":"#about", "text":"About" },
+            { "href":"#skills", "text":"Skills" },
+            { "href":"#work", "text":"My work" },
+            { "href":"#testimonial", "text":"Testimonial" },
+            { "href":"#contact", "text":"Contact" }
+        ]
+    },
+    "content": {
+        "homeData":{
+            "img":"/img/favicon.ico",
+            "name":"Judy",
+            "title":"Junior Developer",
+            "description":"A software engineer currently residing in Seoul, South Korea"
+        },
+        "aboutData":{
+            "majors":[
+                {
+                    "icon":"faHtml5",
+                    "title":"Front-end",
+                    "description":"HTML, CSS, JavaScript, TypeScript, React, WebAPIs",
+                    "style":"major-icon"
+                },
+                {
+                    "icon":"faMobile",
+                    "title":"Mobile",
+                    "description":"Android Studio, React Native, iOS, Swift, Java, Kotlin",
+                    "style":"major-icon"
+                },
+                {
+                    "icon":"faServer",
+                    "title":"Back-end",
+                    "description":"Java, JavaScript, Go, Kotlin, Spring, Spring Boot",
+                    "style":"major-icon"
+                }
+            ],
+            "jobs":[
+                {
+                    "img":"/img/jobs/google.png",
+                    "alt":"google",
+                    "name":"Google as Junior Software Engineer",
+                    "period":"2019 Oct - Until now"
+                },
+                {
+                    "img":"/img/jobs/samsung.png",
+                    "alt":"samsung",
+                    "name":"Samsung as Junior Software Engineer",
+                    "period":"2010 Oct - 2019 Oct"
+                }
+            ]
+        },
+        "skillsData":{
+            "skills":[
+                { "skill":"HTML", "persent":"98%", "width":"98%" },
+                { "skill":"CSS", "persent":"90%", "width":"90%" },
+                { "skill":"JavaScript", "persent":"80%", "width":"80%" },
+                { "skill":"TypeScript", "persent":"70%", "width":"70%" },
+                { "skill":"React", "persent":"70%", "width":"70%" },
+                { "skill":"NodeJS", "persent":"10%", "width":"10%" }
+            ],
+            "tools":["Visual Studio Code","Intellij","Android Studio","Eclipse","MySql"],
+            "etc":["Git","Scrum Master","SVN"]
+        },
+        "workData":{
+            "catecorys":[
+                {"name":"All", "count":"8"},
+                {"name":"Front-end", "count":"4"},
+                {"name":"Back-end", "count":"2"},
+                {"name":"Mobile", "count":"2"}
+            ],
+            "projects":[
+                { "img":"img/projects/project1.webp", "alt":"project#1", "metaTitle":"Project #1", "metaData":"Clone Coding with HTML, CSS"},
+                { "img":"img/projects/project2.webp", "alt":"project#2", "metaTitle":"Project #2", "metaData":"Clone Coding with HTML, CSS"},
+                { "img":"img/projects/project3.webp", "alt":"project#3", "metaTitle":"Project #3", "metaData":"Clone Coding with HTML, CSS"},
+                { "img":"img/projects/project4.webp", "alt":"project#4", "metaTitle":"Project #4", "metaData":"Clone Coding with HTML, CSS"},
+                { "img":"img/projects/project5.webp", "alt":"project#5", "metaTitle":"Project #5", "metaData":"Clone Coding with HTML, CSS"},
+                { "img":"img/projects/project6.webp", "alt":"project#6", "metaTitle":"Project #6", "metaData":"Clone Coding with HTML, CSS"},
+                { "img":"img/projects/project7.webp", "alt":"project#7", "metaTitle":"Project #7", "metaData":"Clone Coding with HTML, CSS"},
+                { "img":"img/projects/project8.webp", "alt":"project#8", "metaTitle":"Project #8", "metaData":"Clone Coding with HTML, CSS"}
+            ]
+        },
+        "testimonialsData":{
+            "testimonials":[
+                { "img":"img/testimonials/people1.webp", "alt":"people1", "name":"James Kim", "company":"Google", "text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ad error earum sapiente architecto, molestias ea repudiandae quam tempore hic, consequuntur voluptas necessitatibus id mollitia esse commodi facilis veritatis expedita!"},
+                { "img":"img/testimonials/people2.webp", "alt":"people2", "name":"Smith Pack", "company":"Samsung", "text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ad error earum sapiente architecto, molestias ea repudiandae quam tempore hic, consequuntur voluptas necessitatibus id mollitia esse commodi facilis veritatis expedita!"},
+                { "img":"img/testimonials/people3.webp", "alt":"people3", "name":"Anna Jin", "company":"Samsung", "text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ad error earum sapiente architecto, molestias ea repudiandae quam tempore hic, consequuntur voluptas necessitatibus id mollitia esse commodi facilis veritatis expedita!"}
+            ]
+        }
+    },
+    "footer":{
+        "links":[
+            { "href":"https://github.com/github", "type": "github" },
+            { "href":"https://www.linkedin.com/", "type": "linkedin" }
+        ]
+    }
+}

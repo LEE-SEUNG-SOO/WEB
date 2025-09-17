@@ -27,10 +27,10 @@ export function SkillList(){
 
     return(
         <div className="skills">
-            <Article />
-            { items &&
-                items.map( (item) => <Article2 item={item}/> )
-            }
+            <ArticleSkills />
+                { items &&
+                    items.map( (item) => <ArticleOther item={item}/> )
+                }
         </div>
     )
 }
@@ -86,7 +86,7 @@ export function Coding(){
     )
 }
 
-export function Article(){
+export function ArticleSkills(){
     return(
         <article className="skills-coding">
             <h3 className="skills-title">Coding Skills</h3>
@@ -95,7 +95,7 @@ export function Article(){
     )
 }
 
-export function Article2({item}){
+export function ArticleOther({item}){
     const {style, text, contents} = item;
 
     return(

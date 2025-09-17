@@ -2,27 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
 import { faMobile, faServer } from '@fortawesome/free-solid-svg-icons';
 
-export function Majors(){
-    const majors = [
-        {
-            "icon":"faHtml5",
-            "title":"Front-end",
-            "description":"HTML, CSS, JavaScript, TypeScript, React, WebAPIs",
-            "style":"major-icon"
-        },
-        {
-            "icon":"faMobile",
-            "title":"Mobile",
-            "description":"Android Studio, React Native, iOS, Swift, Java, Kotlin",
-            "style":"major-icon"
-        },
-        {
-            "icon":"faServer",
-            "title":"Back-end",
-            "description":"Java, JavaScript, Go, Kotlin, Spring, Spring Boot",
-            "style":"major-icon"
-        }
-    ]
+export function Majors({majors}){
 
     return(
         <ul className="majors">
