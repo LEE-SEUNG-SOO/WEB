@@ -9,7 +9,8 @@
             "/images/1.webp",
             "/images/1.webp",
             "/images/1.webp"
-        ]
+        ],
+        "rate":3.2
     },
     {
         "pid" : "2",
@@ -21,7 +22,8 @@
             "/images/2.webp",
             "/images/2.webp",
             "/images/2.webp"
-        ]
+        ],
+        "rate":2.2
     },
     {
         "pid" : "3",
@@ -33,7 +35,8 @@
             "/images/3.webp",
             "/images/3.webp",
             "/images/3.webp"
-        ]
+        ],
+        "rate":5
     },
     {
         "pid" : "4",
@@ -45,7 +48,8 @@
             "/images/4.webp",
             "/images/4.webp",
             "/images/4.webp"            
-        ]
+        ],
+        "rate":2.8
     },
     {
         "pid" : "5",
@@ -57,7 +61,8 @@
             "/images/5.webp",
             "/images/5.webp",
             "/images/5.webp"
-        ]
+        ],
+        "rate":4.8
     },
     {
         "pid" : "6",
@@ -69,7 +74,8 @@
             "/images/6.webp",
             "/images/6.webp",
             "/images/6.webp"
-        ]
+        ],
+        "rate":3.6
     },
     {
         "pid" : "7",
@@ -81,6 +87,7 @@
             "/images/7.webp",
             "/images/7.webp",
             "/images/7.webp"
-        ]
+        ],
+        "rate":0.8
     }
 ]

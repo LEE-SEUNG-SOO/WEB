@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ProductAvatar } from './ProductAvatar.jsx';
 import { fetchData, axiosData, groupByRows } from '../../utils/fetchData.js';
+import { Link } from 'react-router-dom';
 
 export function ProductList() {
     const [rows, setRows] = useState([]);
@@ -31,7 +32,7 @@ export function ProductList() {
                 rows && rows.map( (rowArray, idx) =>
                     <div className='product-list' key={idx}>
                         { rowArray && rowArray.map( product => 
-                            <ProductAvatar img={product.image}/>
+                            <Link to={`/products/${product.pid}`}><ProductAvatar img={product.image}/></Link>
                         )}
                     </div>
                 )
