@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaStarHalfAlt, FaStar, FaRegStar } from "react-icons/fa";
 
-export function StartRating({totalRate, style}) {
+export function StarRating({totalRate, style}) {
     const MAXCOUNT = 5;
     let fillStar = 0;
     let halfStar = 0;
@@ -46,7 +46,14 @@ export function StartRating({totalRate, style}) {
             }
             {/* 별점 추가 */}
             { 
-                <span>{totalRate}</span>
+                style && style === "star-black-big" ?
+                <>
+                    <span className="number">{totalRate} / </span>
+                    <span className="tot-number">{MAXCOUNT}.0</span>
+                </>
+                 : style && style === "star-black-review" ?
+                 ""
+                 : <span>{totalRate}</span> 
             }
         </div>
     );

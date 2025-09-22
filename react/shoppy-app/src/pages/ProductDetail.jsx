@@ -3,7 +3,11 @@ import { useParams } from 'react-router-dom';
 import { axiosData } from '../utils/fetchData.js';
 import { PiGiftThin } from 'react-icons/pi';
 import { ImageList } from '../components/commons/ImageList.jsx';
-import { StartRating } from '../components/commons/StartRating.jsx';
+import { StarRating } from '../components/commons/StarRating.jsx';
+import { Detail } from '../components/detailTabs/Detail.jsx';
+import { Review } from '../components/detailTabs/Review.jsx';
+import { QnA } from '../components/detailTabs/QnA.jsx';
+import { Return } from '../components/detailTabs/Return.jsx';
 
 export function ProductDetail({addCart}) {
     const {pid} = useParams(); // useParams -> 객체형태로 데이터 보존
@@ -50,7 +54,7 @@ export function ProductDetail({addCart}) {
                     <li className='product-detail-title'>{price}</li>
                     <li className='product-detail-subtitle'>{product.info}</li>
                     <li className='product-detail-subtitle-star'>
-                        <StartRating totalRate={product.rate} style="star-rating"/>
+                        <StarRating totalRate={product.rate} style="star-rating"/>
                         <span>527개 리뷰&nbsp;&nbsp;&gt;</span>
                     </li>
                     <li><p className='product-detail-box'>신규회원, 무이자 할부 등</p></li>
@@ -92,9 +96,12 @@ export function ProductDetail({addCart}) {
                         )
                     }
                 </ul>
+                { tabName === "detail" ? <Detail imgList={imgList} detailInfo={product.detailInfo}/> 
+                    : tabName === "review" ? <Review />
+                    : tabName === "qna" ? <QnA />
+                    : <Return />}
             </div>
             <div style={{marginBottom:"50px"}}></div>
         </div>
     );
 }
-
