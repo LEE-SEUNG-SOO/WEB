@@ -12,7 +12,7 @@ import { Return } from '../components/detailTabs/Return.jsx';
 export function ProductDetail({addCart}) {
     const {pid} = useParams(); // useParams -> 객체형태로 데이터 보존
     const [product, setProduct] = useState({});
-    const [size, setSize] = useState("L");
+    const [size, setSize] = useState("XS");
     const [imgList, setImgList] = useState([]);
     const tabLables = ["DETAIL", "REVIEW", "Q&A", "RETURN & DELIVERY"];
     const [tabName, setTabName] = useState("detail");
@@ -36,6 +36,9 @@ export function ProductDetail({addCart}) {
     const handleAddCartItem = () => {
         const cartItem = {
             pid:product.pid,
+            name:product.name,
+            image:product.image,
+            price:product.price,
             size: size,
             qty:1
         };

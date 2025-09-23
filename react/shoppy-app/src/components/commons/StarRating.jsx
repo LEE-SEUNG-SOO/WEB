@@ -48,12 +48,12 @@ export function StarRating({totalRate, style}) {
             { 
                 style && style === "star-black-big" ?
                 <>
-                    <span className="number">{totalRate} / </span>
-                    <span className="tot-number">{MAXCOUNT}.0</span>
+                    <span className="star-black-big number">{totalRate} / </span>
+                    <span className="star-black-big tot-number">{MAXCOUNT}.0</span>
                 </>
                  : style && style === "star-black-review" ?
                  ""
-                 : <span>{totalRate}</span> 
+                 : <span className="star-coral number">{totalRate}</span> 
             }
         </div>
     );

@@ -17,14 +17,13 @@ export default function App() {
   // 장바구니 수량 관리
   const [cartCount, setCartCount] = useState(0);
   // 장바구니 아이템 관리
-  const [cartItems, setcartItems] = useState([]);
-
-  const [check, setCheck] = useState({});
+  const [cartItems, setCartItems] = useState([]);
 
   const addCart = (cartItem) => {
-    setcartItems(cartItemsCheck(cartItems ,cartItem, setCheck,check));
+    setCartItems(cartItemsCheck(cartItems ,cartItem));
     setCartCount(cartCount + 1);
   }
+  console.log(cartItems);
 
   return (
     <>
@@ -35,7 +34,8 @@ export default function App() {
             <Route path='/all' element={<Product />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
-            <Route path='/cart' element={<Cart cartItems={cartItems}/>}/>
+            <Route path='/cart' 
+              element={<Cart cartItems={cartItems} setCartItems={setCartItems} cartCount={cartCount} setCartCount={setCartCount}/>}/>
             <Route path='/products/:pid' element={<ProductDetail addCart={addCart}/>} />
           </Route>
         </Routes>
