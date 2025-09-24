@@ -9,7 +9,7 @@ export function getTotalPrice(cartData) {
 export function cartItemsAddInfo(products, cartItems){
     return cartItems.map( item => {
         const product = products.find( product => product.pid === item.pid );
-        return {...item, image: product.image, price:product.price, name:product.name}
+        return {...item, image: product.image, price:product.price, name:product.name, info:product.info}
     })
 }
 

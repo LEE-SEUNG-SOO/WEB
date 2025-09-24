@@ -1,18 +1,31 @@
 import { useState, useRef } from "react"
 import { FaUser, FaLock } from "react-icons/fa";
 import { validateFormCheck } from "../utils/validate.js";
+import { useNavigate } from 'react-router-dom';
 
 export function Login(){
     const idRef = useRef(null);
     const pwdRef = useRef(null);
     const [formData, setFormData] = useState({});
     const [text, setText] = useState({'id':'', 'pwd':''});
+    const nav = useNavigate();
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
 
         if(validateFormCheck(idRef, pwdRef, setText)){
-            alert("확인완료");
+            const did = 'test';
+            const dpwd = '1234';
+            if(did === formData.id && dpwd === formData.pwd) {
+                alert("로그인 성공");
+                const loginInfo = { "userId":formData.id, "token":"dddd" }
+                // localStorage.setItem("loginInfo", loginInfo);
+                localStorage.setItem("loginInfo", JSON.stringify(loginInfo)); // json데이터를 String형식으로 저장
+                nav('/');
+            } else {
+                alert("로그인 실패");
+                idRef.current.focus();
+            }
         }
     }
 

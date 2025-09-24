@@ -6,6 +6,11 @@ import { useEffect, useState } from "react";
 
 //<IoCartOutline />
 export function Header({cartCount}){
+    // const loginInfo = localStorage.getItem("loginInfo");
+    // // console.log("loginInfo", loginInfo);
+    // console.log("loginInfo", JSON.parse(loginInfo));// 문자열을 json 형태로
+    
+
     return(
         <div className="header-outer">
             <div className="header">
@@ -24,6 +29,9 @@ export function Header({cartCount}){
                     </Link>
                     <Link to="/signup">
                         <button type="button">Singup</button>
+                    </Link>
+                    <Link to="/support">
+                        <button type="button">support</button>
                     </Link>
                 </nav>
             </div>

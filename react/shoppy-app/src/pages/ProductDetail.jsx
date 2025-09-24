@@ -39,6 +39,7 @@ export function ProductDetail({addCart}) {
             name:product.name,
             image:product.image,
             price:product.price,
+            info:product.info,
             size: size,
             qty:1
         };

@@ -4,10 +4,12 @@ import { Home } from './pages/Home.jsx';
 import { Product } from './pages/Product.jsx';
 import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
+import { Support } from './pages/Support.jsx';
 import { Cart } from './pages/Cart.jsx';
 import { Layout } from './pages/Layout.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
 import { cartItemsCheck } from './utils/cart.js';
+import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
 import './styles/shoppy.css';
 import './styles/commons.css';
 import './styles/cgv.css';
@@ -34,9 +36,11 @@ export default function App() {
             <Route path='/all' element={<Product />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/support' element={<Support />} />
             <Route path='/cart' 
               element={<Cart cartItems={cartItems} setCartItems={setCartItems} cartCount={cartCount} setCartCount={setCartCount}/>}/>
             <Route path='/products/:pid' element={<ProductDetail addCart={addCart}/>} />
+            <Route path='/checkout' element={<CheckoutInfo />}/>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/cart.css';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { axiosData } from '../utils/fetchData.js';
@@ -7,6 +8,7 @@ import { cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
 export function Cart({cartItems, setCartItems, cartCount, setCartCount}) {
     // const [cartList, setCartList] = useState();
     const [totalPrice, setTotalPrice] = useState(0);
+    const navigate = useNavigate();
 
     useEffect( () => {
         const fetch = async () => {
@@ -80,17 +82,18 @@ export function Cart({cartItems, setCartItems, cartCount, setCartCount}) {
                 )
             }
             {/* 주문 버튼 출력 */}
+            { cartItems && cartItems.length > 0 ? 
             <>
                 <div className='cart-summary'>
                     <h3>주문 예상 금액</h3>
                     <div className='cart-summary-sub'>
                         <p className='cart-total'>
                             <label>총 상품 가격 : </label>
-                            <span>{ parseInt(totalPrice).toLocaleString() }원</span>
+                            <span>{ totalPrice.toLocaleString() }원</span>
                         </p>
                         <p className='cart-total'>
                             <label>총 할인 가격 : </label>
-                            <span>-1000원</span>
+                            <span>0원</span>
                         </p>
                         <p className='cart-total'>
                             <label>총 배송비 : </label>
@@ -99,14 +102,22 @@ export function Cart({cartItems, setCartItems, cartCount, setCartCount}) {
                     </div>
                     <p className='cart-total2'>
                         <label>총 금액 : </label>
-                        <span>{ parseInt(totalPrice).toLocaleString() }원</span>
+                        <span>{ totalPrice.toLocaleString() }원</span>
                     </p>
                 </div>
                 <div className='cart-actions'>
-                    <button type='button'>주문하기</button>
+                    { /* navigae(주소 , 전송객체)*/ }
+                    <button type='button' onClick={ () => { navigate("/checkout", {state: {cartList:cartItems, totalPrice:totalPrice}}) } }>주문하기</button>
                 </div>
             </>
-
+            : 
+            <div>
+                <p>장바구니에 담은 상품이 없습니다. &nbsp;&nbsp;&nbsp;
+                    <Link to="/all">상품으로</Link>
+                </p>
+                <img src="/images/cart.jpg" style={{width:"50%", marginTop:"20px"}}/>
+            </div>
+            }
         </div>
     );
 }
