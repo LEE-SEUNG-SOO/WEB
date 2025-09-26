@@ -1,23 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { SearchForm } from '../components/commons/SearchForm.jsx';
 import { MenuList } from '../components/commons/MenuList.jsx';
 import { axiosData } from '../utils/fetchData.js';
+import { AuthContext } from '../context/AuthContext.js';
+import { useNavigate } from 'react-router-dom';
 
 export function Support() {
     const [menus, setMenus] = useState([]);
     const [categorys, setCategorys] = useState([]);
     const [list, setList] = useState([]);
+    const { isLogin } = useContext(AuthContext);
+    const nav = useNavigate();
 
     useEffect( () => {
-        const fetch = async () => {
-            const jsonData = await axiosData('/data/support.json');
-            setMenus(jsonData.menus);
-            setCategorys(jsonData.categorys);
-            setList(jsonData.list);
-        }
-        fetch();
-    },[])
-
+            if(isLogin) {
+                const fetch = async () => {
+                    const jsonData = await axiosData('/data/support.json');
+                    setMenus(jsonData.menus);
+                    setCategorys(jsonData.categorys);
+                    setList(jsonData.list);
+                }
+                
+                fetch();
+            }
+            else {
+               alert('로그인 필요');
+               nav('/');
+           }
+    },[])   
+    
     // 필터
     const filterList = (type) => {
         const filter = async () => {

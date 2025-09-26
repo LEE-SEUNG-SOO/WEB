@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../context/CartContext.js";
+import { AuthContext } from "../../context/AuthContext.js";
+import { useAuth } from "../hooks/useAuth.js";
 
 //<IoCartOutline />
 export function Header(){
@@ -10,6 +12,8 @@ export function Header(){
     // // console.log("loginInfo", loginInfo);
     // console.log("loginInfo", JSON.parse(loginInfo));// 문자열을 json 형태로    
     const { cartCount } = useContext(CartContext);
+    const { isLogin } = useContext(AuthContext);
+    const { handleLogout } = useAuth();
 
     return(
         <div className="header-outer">
@@ -24,15 +28,19 @@ export function Header(){
                         <IoCartOutline className="header-icons"/>
                         <span className="header-icons-cart">{cartCount}</span>
                     </Link>
-                    <Link to="/login">
-                        <button type="button">Login</button>
-                    </Link>
+                    { isLogin ?
+                        <Link to="/"><button type="button" onClick={ () => { handleLogout() } }>Logout</button></Link>
+                        : <Link to="/login"><button type="button">Login</button></Link>
+                    }
                     <Link to="/signup">
                         <button type="button">Singup</button>
                     </Link>
-                    <Link to="/support">
-                        <button type="button">support</button>
-                    </Link>
+                    { isLogin ?
+                        <Link to="/support">
+                            <button type="button">support</button>
+                        </Link>
+                        : ""
+                    }
                 </nav>
             </div>
         </div>

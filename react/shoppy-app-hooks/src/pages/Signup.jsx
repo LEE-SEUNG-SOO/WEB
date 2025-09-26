@@ -1,13 +1,19 @@
 import '../styles/cgvSignup.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { validateCheck } from '../utils/validate.js';
 import { createInit } from '../utils/init.js';
+import { AuthContext } from '../context/AuthContext.js';
+import { useAuth } from '../components/hooks/useAuth.js';
+import { useNavigate } from 'react-router-dom';
 
 export function Signup() {
+    const { setUser } = useContext(AuthContext);
     const initArray = ['id', 'pwd', 'cpwd', 'name', 'phone', 'emailName', 'emailDomain'];
     const initForm = createInit(initArray, "", ""); 
     const initMsg = createInit(initArray, "Msg", "");
     const initRef = createInit(initArray, "Ref", useRef(null));
+    const { handleLogin } = useAuth();
+    const nav = useNavigate();
 
     console.log("initForm2", initForm);
     console.log("initMsg2", initMsg);
@@ -25,6 +31,10 @@ export function Signup() {
         e.preventDefault();
         if(validateCheck(form, setMsg, ref)){
             setMsg(initMsg);
+            setUser(form);
+            alert('회원가입성공');
+            handleLogin();
+            nav('/');
         };
     }
 

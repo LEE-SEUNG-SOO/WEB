@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { axiosData } from '../utils/fetchData.js';
 import { PiGiftThin } from 'react-icons/pi';
@@ -9,28 +9,22 @@ import { Review } from '../components/detailTabs/Review.jsx';
 import { QnA } from '../components/detailTabs/QnA.jsx';
 import { Return } from '../components/detailTabs/Return.jsx';
 import { useCart } from '../components/hooks/useCart.js';
+import { ProductContext } from '../context/ProductContext.js';
+import { useProduct } from '../components/hooks/useProduct.js';
 
 export function ProductDetail() {
     const { addCart } = useCart();
+    const { product, imgList } = useContext(ProductContext);
+    const { getFilter } = useProduct();
     const {pid} = useParams(); // useParams -> 객체형태로 데이터 보존
-    const [product, setProduct] = useState({});
     const [size, setSize] = useState("XS");
-    const [imgList, setImgList] = useState([]);
     const tabLables = ["DETAIL", "REVIEW", "Q&A", "RETURN & DELIVERY"];
     const [tabName, setTabName] = useState("detail");
     const tabEventNames = ['detail', 'review', 'qna', 'return']
 
     useEffect( () => {
-        const fillter = async () => {
-            const jsonData = await axiosData("/data/products.json");
-            // await jsonData.filter( data => data.pid === pid ? setProduct(data) : null ); // fillter는 배열로 리턴!!
-            const [fdata] = await jsonData.filter( data => data.pid === pid); // fillter는 배열로 리턴!!
-            setProduct(fdata);
-            setImgList(fdata.imgList);
-        }
-        fillter();
-
-    }, [pid]);
+        getFilter(pid);
+    }, []);
     
     const price = parseInt(product.price).toLocaleString() + "원";
 

@@ -1,65 +1,28 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { axiosData } from '../utils/fetchData.js';
-import { cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
+import { getTotalPrice } from '../utils/cart.js';
 import { CartContext } from '../context/CartContext.js';
+import { useCart } from '../components/hooks/useCart.js';
 import '../styles/cart.css';
+import { AuthContext } from '../context/AuthContext.js';
 
 export function Cart() {
-    // const [cartList, setCartList] = useState();
-    // const [totalPrice, setTotalPrice] = useState(0);
     const navigate = useNavigate();
+    // useCart 커스텀 함수 호출
+    const { updateCartItem, removeCartItem } = useCart();
     // CartContext의 값 호출
-    const { cartItems, setCartItems, cartCount, setCartCount, totalPrice, setTotalPrice } = useContext(CartContext);
-    // 총 금액 설정
+    const { cartItems, totalPrice, setTotalPrice } = useContext(CartContext);
+    // 총 금액 설정(초기 설정)
     setTotalPrice(getTotalPrice(cartItems));
-
-    // useEffect( () => {
-    //     const fetch = async () => {
-    //         // const jsonData = await axiosData('/data/products.json');
-    //         // const cartData = cartItemsAddInfo(jsonData, cartItems);
-    //         // console.log("cartData : ",cartItems);
-    //         // setCartItems(cartItems);
-    //         setTotalPrice(getTotalPrice(cartItems));
-    //         // }
-    //         // fetch();
-            
-    //     },[]);
+    const { isLogin, setIsCart } = useContext(AuthContext);
     
-    // 장바구니 리스트 갱신
-    const updateCartList = (cid, upflag) => {
-        // 장바구니 갱신 데이터 취득
-        const cartData = 
-            cartItems.map( item => 
-                item.cid === cid ? 
-                    upflag ? { ...item, qty: item.qty + 1 }
-                           :{ ...item, qty: item.qty - 1 }
-                : item
-            )
-        // 장바구니 아이템 갱신
-        setCartItems(cartData);
-        // 총 금액 갱신
-        setTotalPrice(getTotalPrice(cartData));
-        // 장바구니 카운트 갱신
-        upflag ? setCartCount(cartCount + 1) : setCartCount(cartCount - 1);
-    };
-
-    // 장바구니 리스트 삭제
-    const handleRemoveCartList = (cid) => {
-        // 장바구니 갱신 데이터 취득
-        // 장바구니 카운트 갱신
-        const cartData = 
-            cartItems.filter( item => 
-                item.cid !== cid ? item : setCartCount(cartCount - item.qty)
-            );
-
-        // 장바구니 아이템 갱신
-        setCartItems(cartData);
-        // 총 금액 갱신
-        setTotalPrice(getTotalPrice(cartData));
+    const hanldeLogin = () => {
+        alert("로그인이 필요합니다.");
+        navigate("/login");
+        setIsCart(true);
     }
-    
+
     return (
         <div className='cart-container'>
             <h2 className='cart-header'>장바구니</h2>
@@ -75,11 +38,11 @@ export function Cart() {
                                 <p className='cart-item-price'> { parseInt(item.price).toLocaleString() }원 </p>
                             </div>
                             <div className='cart-quantity'>
-                                <button type='button' onClick={ () => { item.qty > 1 && updateCartList( item.cid, false ) } }>-</button>
+                                <button type='button' onClick={ () => { item.qty > 1 && updateCartItem( item.cid, false ) } }>-</button>
                                 <input type="text" value={ item.qty } readOnly/>
-                                <button type='button' onClick={ () => { updateCartList( item.cid, true ) } }>+</button>
+                                <button type='button' onClick={ () => { updateCartItem( item.cid, true ) } }>+</button>
                             </div>
-                            <button className='cart-remove' onClick={ () => {handleRemoveCartList(item.cid)} }>
+                            <button className='cart-remove' onClick={ () => { removeCartItem(item.cid) } }>
                                 <RiDeleteBin6Line />
                             </button>
                         </div>
@@ -112,7 +75,7 @@ export function Cart() {
                 </div>
                 <div className='cart-actions'>
                     { /* navigae(주소 , 전송객체)*/ }
-                    <button type='button' onClick={ () => { navigate("/checkout", {state: {cartList:cartItems, totalPrice:totalPrice}}) } }>주문하기</button>
+                    <button type='button' onClick={ () => isLogin ? navigate("/checkout") : hanldeLogin()}>주문하기</button>
                 </div>
             </>
             : 
