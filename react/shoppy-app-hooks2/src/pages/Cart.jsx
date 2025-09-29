@@ -1,27 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { getTotalPrice } from '../utils/cart.js';
 import { CartContext } from '../context/CartContext.js';
 import { useCart } from '../hooks/useCart.js';
-import { AuthContext } from '../context/AuthContext.js';
 import '../styles/cart.css';
 
 export function Cart() {
+    const { cartItems, totalPrice } = useContext(CartContext);
+    const { settingTotalPrice, updateCartList, removeCartList } = useCart();
     const navigate = useNavigate();
-    // useCart 커스텀 함수 호출
-    const { updateCartItem, removeCartItem } = useCart();
-    // CartContext의 값 호출
-    const { cartItems, totalPrice, setTotalPrice } = useContext(CartContext);
-    // 총 금액 설정(초기 설정)
-    setTotalPrice(getTotalPrice(cartItems));
-    const { isLogin, setIsCart } = useContext(AuthContext);
-    
-    const hanldeLogin = () => {
-        alert("로그인이 필요합니다.");
-        navigate("/login");
-        setIsCart(true);
-    }
+
+    useEffect( () => {
+        settingTotalPrice();        
+    },[]);
 
     return (
         <div className='cart-container'>
@@ -38,11 +29,11 @@ export function Cart() {
                                 <p className='cart-item-price'> { parseInt(item.price).toLocaleString() }원 </p>
                             </div>
                             <div className='cart-quantity'>
-                                <button type='button' onClick={ () => { item.qty > 1 && updateCartItem( item.cid, false ) } }>-</button>
+                                <button type='button' onClick={ () => { item.qty > 1 && updateCartList( item.cid, false ) } }>-</button>
                                 <input type="text" value={ item.qty } readOnly/>
-                                <button type='button' onClick={ () => { updateCartItem( item.cid, true ) } }>+</button>
+                                <button type='button' onClick={ () => { updateCartList( item.cid, true ) } }>+</button>
                             </div>
-                            <button className='cart-remove' onClick={ () => { removeCartItem(item.cid) } }>
+                            <button className='cart-remove' onClick={ () => { removeCartList(item.cid) } }>
                                 <RiDeleteBin6Line />
                             </button>
                         </div>
@@ -75,7 +66,7 @@ export function Cart() {
                 </div>
                 <div className='cart-actions'>
                     { /* navigae(주소 , 전송객체)*/ }
-                    <button type='button' onClick={ () => isLogin ? navigate("/checkout") : hanldeLogin()}>주문하기</button>
+                    <button type='button' onClick={ () => { navigate("/checkout") } }>주문하기</button>
                 </div>
             </>
             : 

@@ -9,23 +9,17 @@ import { Cart } from './pages/Cart.jsx';
 import { Layout } from './pages/Layout.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
 import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
-import { AuthProvider } from './context/AuthContext.js';
-import { ProductProvider } from './context/ProductContext.js';
 import { CartProvider } from './context/CartContext.js';
-import { ProtectedPageRoute } from './pages/ProtectedPageRoute.js';
-
+import { ProductProvider } from './context/ProductContext.js';
 import './styles/shoppy.css';
 import './styles/commons.css';
 import './styles/cgv.css';
 
 // : <- 패스배리어블( 경로 변수 설정)
 export default function App() {
-  // CartProvider로 범위 지정
-  // <ExProvider> <<= 추가로 쓸 프로바이더 설정
   return (
-    <AuthProvider>
-    <ProductProvider>
     <CartProvider>
+    <ProductProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -33,16 +27,15 @@ export default function App() {
             <Route path='/all' element={<Product />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
-            <Route path='/support' element={<ProtectedPageRoute><Support /></ProtectedPageRoute>} />
-            <Route path='/cart' element={<Cart />}/>
-            {/* <Route path='/products/:pid' element={<ProductDetail addCart={addCart}/>} /> */}
+            <Route path='/support' element={<Support />} />
+            <Route path='/cart' 
+              element={<Cart />}/>
             <Route path='/products/:pid' element={<ProductDetail />} />
-            <Route path='/checkout' element={<ProtectedPageRoute><CheckoutInfo /></ProtectedPageRoute>}/>
+            <Route path='/checkout' element={<CheckoutInfo />}/>
           </Route>
         </Routes>
       </BrowserRouter>
-    </CartProvider>
     </ProductProvider>
-    </AuthProvider>
+    </CartProvider>
   );
 }

@@ -1,6 +1,6 @@
 import { ProductList } from "../components/product/ProductList.jsx";
 
-export function Home(){    
+export function Home(){
     return(
         <div className="content">
             <div className="banner">

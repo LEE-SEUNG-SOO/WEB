@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SearchForm } from '../components/commons/SearchForm.jsx';
 import { MenuList } from '../components/commons/MenuList.jsx';
 import { axiosData } from '../utils/fetchData.js';
@@ -15,10 +15,9 @@ export function Support() {
             setCategorys(jsonData.categorys);
             setList(jsonData.list);
         }
-        
         fetch();
-    },[])   
-    
+    },[])
+
     // 필터
     const filterList = (type) => {
         const filter = async () => {

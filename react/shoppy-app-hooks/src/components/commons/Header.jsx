@@ -4,7 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext.js";
 import { AuthContext } from "../../context/AuthContext.js";
-import { useAuth } from "../hooks/useAuth.js";
+import { useAuth } from "../../hooks/useAuth.js";
 
 //<IoCartOutline />
 export function Header(){

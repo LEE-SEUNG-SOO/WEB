@@ -7,10 +7,10 @@ export const ProductProvider = ({children}) => {
     const [number, setNumber] = useState(3);
     const [product, setProduct] = useState({});
     const [imgList, setImgList] = useState([]);
-
-    return(
+    
+    return (
         <ProductContext.Provider value={{ productList, setProductList, number, setNumber, product, setProduct, imgList, setImgList }}>
             {children}
         </ProductContext.Provider>
-    );
-};
+    )
+}

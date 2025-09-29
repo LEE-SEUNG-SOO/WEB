@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../../context/CartContext.js';
-import { cartItemsCheck, getTotalPrice } from '../../utils/cart.js'
+import { CartContext } from '../context/CartContext.js';
+import { cartItemsCheck, getTotalPrice } from '../utils/cart.js'
 /**
  * CartContext를 제어하는 함수를 가진 커스텀 훅
  */

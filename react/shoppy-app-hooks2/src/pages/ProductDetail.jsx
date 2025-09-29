@@ -15,16 +15,17 @@ import { useProduct } from '../hooks/useProduct.js';
 export function ProductDetail() {
     const { addCart } = useCart();
     const { product, imgList } = useContext(ProductContext);
-    const { getFilter } = useProduct();
-    const { pid } = useParams(); // useParams -> 객체형태로 데이터 보존
+    const { getFillter } = useProduct();
+    
+    const {pid} = useParams(); // useParams -> 객체형태로 데이터 보존
     const [size, setSize] = useState("XS");
     const tabLables = ["DETAIL", "REVIEW", "Q&A", "RETURN & DELIVERY"];
     const [tabName, setTabName] = useState("detail");
     const tabEventNames = ['detail', 'review', 'qna', 'return']
 
     useEffect( () => {
-        getFilter(pid);
-    }, []);
+        getFillter(pid);
+    }, [pid]);
     
     const price = parseInt(product.price).toLocaleString() + "원";
 
