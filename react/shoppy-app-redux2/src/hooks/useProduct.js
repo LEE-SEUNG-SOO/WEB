@@ -15,18 +15,17 @@ export const useProduct = () => {
     }
 
     const getFilter = (pid) => {
-        //구조 분해 할당으로 {} 오브젝트 만 가져옴
-        const [fdata] = productList.flat().filter( data => data.pid === pid ); // flat() => 2차원 배열을 1차원배열로 변경(3차원일경우 flat().flat())
+            const [fdata] = productList.flat().filter( data => data.pid === pid ); // flat() => 2차원 배열을 1차원배열로 변경(3차원일경우 flat().flat())
 
-        // 3차원 flat 확인
-        // const kk = [ [ [1,2,3] ,[3,4,5] ], [ [6,7,8] ,[9,0,1] ] ];
-        // console.log("기본", kk);
-        // console.log("2차원", kk.flat());
-        // console.log("3차원", kk.flat().flat());
-    
-        setProduct(fdata);
-        setImgList(fdata.imgList);
-    };
+            // 3차원 flat 확인
+            // const kk = [ [ [1,2,3] ,[3,4,5] ], [ [6,7,8] ,[9,0,1] ] ];
+            // console.log("기본", kk);
+            // console.log("2차원", kk.flat());
+            // console.log("3차원", kk.flat().flat());
+        
+            setProduct(fdata);
+            setImgList(fdata.imgList);
+        };
 
     return(
         { getProductList, getFilter }
