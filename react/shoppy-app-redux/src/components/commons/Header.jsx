@@ -1,16 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext.js";
-import { useAuth } from "../../hooks/useAuth.js";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getLogout } from "../../feature/auth/authAPI.js";
 
 //<IoCartOutline />
 export function Header(){
-    const { isLogin } = useContext(AuthContext);
-    const { handleLogout } = useAuth();
-    const cartCount = useSelector( (state) => state.cart.cartCount );
+    // const nav = useNavigate();
+    const dispatch = useDispatch();
+    const isLogin = useSelector( state => state.auth.isLogin );
+    const cartCount = useSelector( state => state.cart.cartCount );
+
+    const handleLogout = () => {
+        const succ = dispatch(getLogout());
+        const loginInfo = localStorage.getItem("loginInfo");
+
+        if(succ && !loginInfo){
+            alert("로그아웃");
+            // nav("/");
+        };
+    }
 
     return(
         <div className="header-outer">
@@ -26,7 +35,7 @@ export function Header(){
                         <span className="header-icons-cart">{cartCount}</span>
                     </Link>
                     { isLogin ?
-                        <Link to="/"><button type="button" onClick={ () => { handleLogout() } }>Logout</button></Link>
+                        <Link to="/"><button type="button" onClick={ handleLogout }>Logout</button></Link>
                         : <Link to="/login"><button type="button">Login</button></Link>
                     }
                     <Link to="/signup">

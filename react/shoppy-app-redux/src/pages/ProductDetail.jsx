@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { PiGiftThin } from 'react-icons/pi';
 import { ImageList } from '../components/commons/ImageList.jsx';
@@ -7,16 +7,15 @@ import { Detail } from '../components/detailTabs/Detail.jsx';
 import { Review } from '../components/detailTabs/Review.jsx';
 import { QnA } from '../components/detailTabs/QnA.jsx';
 import { Return } from '../components/detailTabs/Return.jsx';
-import { ProductContext } from '../context/ProductContext.js';
-import { useProduct } from '../hooks/useProduct.js';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../feature/cart/cartAPI.js';
+import { getFilter } from '../feature/product/productAPI.js';
 
 export function ProductDetail() {
     // addCartItem을 사용하기 위한 dispatch설정
     const dispatch = useDispatch();
-    const { product, imgList } = useContext(ProductContext);
-    const { getFilter } = useProduct();
+    const product = useSelector( state => state.product.product );
+    const imgList = product.imgList;
     const { pid } = useParams(); // useParams -> 객체형태로 데이터 보존
     const [size, setSize] = useState("XS");
     const tabLables = ["DETAIL", "REVIEW", "Q&A", "RETURN & DELIVERY"];
@@ -24,25 +23,25 @@ export function ProductDetail() {
     const tabEventNames = ['detail', 'review', 'qna', 'return']
 
     useEffect( () => {
-        getFilter(pid);
+        dispatch(getFilter(pid));
     }, []);
     
     const price = parseInt(product.price).toLocaleString() + "원";
 
-    // 쇼핑백 추가
-    const handleAddCartItem = () => {
-        const cartItem = {
-            pid:product.pid,
-            name:product.name,
-            image:product.image,
-            price:product.price,
-            info:product.info,
-            size: size,
-            qty:1
-        };
+    // // 쇼핑백 추가
+    // const handleAddCartItem = () => {
+    //     const cartItem = {
+    //         pid:product.pid,
+    //         name:product.name,
+    //         image:product.image,
+    //         price:product.price,
+    //         info:product.info,
+    //         size: size,
+    //         qty:1
+    //     };
 
-        dispatch(addCart(cartItem)); // addCart 호출시 dispatch 전송
-    }
+    //     dispatch(addCart(cartItem)); // addCart 호출시 dispatch 전송
+    // }
 
     return (
         <div className='content'>
@@ -75,7 +74,7 @@ export function ProductDetail() {
                         <button type='button' className='product-detail-button order'>바로 구매</button>
                         <button type='button'
                                 className='product-detail-button cart'
-                                onClick={ handleAddCartItem }>쇼핑백 담기</button>
+                                onClick={ () => dispatch(addCart(product, size))  }>쇼핑백 담기</button>
                         <div type="button" className='gift'>
                             <PiGiftThin />
                             <div className='gift-span'>선물하기</div>

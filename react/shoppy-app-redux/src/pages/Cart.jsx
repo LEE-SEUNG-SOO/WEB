@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { AuthContext } from '../context/AuthContext.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTotalPrice, updateCart, removeCart } from '../feature/cart/cartAPI.js';
+import { setPage } from '../feature/auth/authAPI.js';
 
 import '../styles/cart.css';
 
 export function Cart() {
+    const isLogin = useSelector( state => state.auth.isLogin);
     // dispatch
     const dispatch = useDispatch();
     // 장바구니 리스트
@@ -18,13 +18,11 @@ export function Cart() {
     dispatch(getTotalPrice());
     
     const navigate = useNavigate();
-
-    const { isLogin, setIsCart } = useContext(AuthContext);
     
     const hanldeLogin = () => {
         alert("로그인이 필요합니다.");
+        dispatch(setPage());
         navigate("/login");
-        setIsCart(true);
     }
 
     return (
@@ -79,7 +77,7 @@ export function Cart() {
                 </div>
                 <div className='cart-actions'>
                     { /* navigae(주소 , 전송객체)*/ }
-                    <button type='button' onClick={ () => isLogin ? navigate("/checkout") : hanldeLogin()}>주문하기</button>
+                    <button type='button' onClick={ () => isLogin ? navigate("/checkout") : hanldeLogin() }>주문하기</button>
                 </div>
             </>
             : 

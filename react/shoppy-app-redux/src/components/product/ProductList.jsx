@@ -1,15 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { ProductAvatar } from './ProductAvatar.jsx';
 import { Link } from 'react-router-dom';
-import { useProduct } from '../../hooks/useProduct.js';
-import { ProductContext } from '../../context/ProductContext.js';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProductList } from '../../feature/product/productAPI.js';
 
 export function ProductList() {
-    const { productList, number } = useContext(ProductContext); 
-    const { getProductList } = useProduct();
+    const dispatch = useDispatch();
+    const productList = useSelector( state => state.product.productList );
+    const number = useSelector( state => state.product.number );
 
     useEffect( () => {
-       getProductList();
+       dispatch(getProductList(number));
     },[number]);
 
     return (

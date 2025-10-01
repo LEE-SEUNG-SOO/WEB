@@ -1,20 +1,31 @@
-import { useState, useRef, useContext } from "react"
+import { useState, useRef } from "react"
 import { FaUser, FaLock } from "react-icons/fa";
-import { validateFormCheck } from "../utils/validate.js";
-import { useAuth } from "../hooks/useAuth.js";
+import { useDispatch, useSelector } from "react-redux";
+import { getLogin } from "../feature/auth/authAPI.js";
+import { useNavigate } from "react-router-dom";
 
 export function Login(){
+    const dispatch = useDispatch();
+    const nav = useNavigate();
+    const isCart = useSelector( state => state.auth.isCart );
     const idRef = useRef(null);
     const pwdRef = useRef(null);
     const [formData, setFormData] = useState({});
     const [text, setText] = useState({'id':'', 'pwd':''});
-    const { checkUser } = useAuth();
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
 
-        if(validateFormCheck(idRef, pwdRef, setText)){
-            checkUser(formData.id, formData.pwd, idRef);
+        const succ = dispatch(getLogin(formData, idRef, pwdRef, setText));
+        
+        // 비동기식 처리 후 isLogin을 변경하기때문에 isLogin으로 체크 불가 
+        // if(isLogin){
+        if(succ){
+            alert("로그인 성공");
+            isCart ? nav('/checkout') : nav('/');
+        } else {
+            alert("로그인 실패");
+            idRef.current.focus();
         }
     }
 

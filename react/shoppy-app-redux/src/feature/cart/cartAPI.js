@@ -1,9 +1,10 @@
 import React from 'react';
 import { addCartItem, updateCartCount, updateTotalPrice, updateCartItem, removeCartItem } from './cartSlice.js';
 
-export const addCart = (cartItem) => (dispatch) => {
+export const addCart = (product, size) => (dispatch) => {
     // 장바구니 추가
-    dispatch(addCartItem({ "cartItem":cartItem }));
+    const cartItem = {...product, "size":size, "qty":1};
+    dispatch(addCartItem({"cartItem": cartItem}));
     // 장바구니 갯수 설정
     dispatch(updateCartCount());
 }

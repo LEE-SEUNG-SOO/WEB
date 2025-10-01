@@ -49,11 +49,17 @@ export const cartSlice = createSlice({
       // 삭제대상외 장바구니 재설정
       state.cartList = state.cartList.filter( item => item.cid !== cid );
     },
+    // 장바구니 초기화
+    initCartItem (state, action) {
+      state.cartList = [];
+      state.cartCount = 0;
+      state.totalPrice = 0;
+    }
   }
 });
 
 // 컴포넌트, API함수에서 reducers의 함수를 사용하기 위해 action 추가(dispatch)
-export const { addCartItem, updateCartCount, updateTotalPrice, updateCartItem, removeCartItem } = cartSlice.actions;
+export const { addCartItem, updateCartCount, updateTotalPrice, updateCartItem, removeCartItem, initCartItem } = cartSlice.actions;
 
 // store import
 export default cartSlice.reducer;
