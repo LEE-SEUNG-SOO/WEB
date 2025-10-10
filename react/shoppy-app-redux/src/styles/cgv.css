@@ -192,12 +192,12 @@ footer {
 *  author : hong@naver.com
 *  final date : 2024/0/24
 ********************************************/
-.content, 
+/* .content, 
 .content-top,
 .content-moviechart
 {
     width: 100%;
-}
+} */
 .content-top {
     background-color: #000;
     position: relative;
